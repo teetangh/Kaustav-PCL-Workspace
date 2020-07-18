@@ -61,7 +61,7 @@ if __name__ == "__main__":
     rospy.init_node("motor_driver")
 
     motor_driver_wrapper = MotorDriverROSWrapper()
-    rospy.on_shutdown(motor_driver_wrapper.stop())
+    rospy.on_shutdown(motor_driver_wrapper.stop)
 
     rospy.loginfo("Motor driver is now started,ready to get commands")
     rospy.spin()
