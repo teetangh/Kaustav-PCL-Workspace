@@ -1,8 +1,0 @@
-prefix=/home/kaustav/Desktop/Kaustav-ROS-practice/robotics_backend_ws/devel
-
-Name: driver_wrapper_python_pkg
-Description: Description of driver_wrapper_python_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

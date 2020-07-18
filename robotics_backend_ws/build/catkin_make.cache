@@ -1,2 +1,0 @@
-driver_wrapper_python_pkg
--DCATKIN_DEVEL_PREFIX=/home/kaustav/Desktop/Kaustav-ROS-practice/robotics_backend_ws/devel -DCMAKE_INSTALL_PREFIX=/home/kaustav/Desktop/Kaustav-ROS-practice/robotics_backend_ws/install -G Unix Makefiles
