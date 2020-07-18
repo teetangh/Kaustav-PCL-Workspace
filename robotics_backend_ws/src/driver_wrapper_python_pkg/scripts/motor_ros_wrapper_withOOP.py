@@ -4,8 +4,8 @@ import rospy
 # from motor_driver import MotorDriver
 from driver_wrapper_python_pkg.src.my_robot_driver.motor_driver import MotorDriver
 
-from std_msgs import Int32
-from std_srvs import Trigger
+from std_msgs.msg import Int32
+from std_srvs.srv import Trigger
 
 from diagnostic_msgs.msg import DiagnosticStatus
 from diagnostic_msgs.msg import KeyValue
@@ -18,7 +18,7 @@ class MotorDriverROSWrapper:
         max_speed = rospy.get_param("~max_speed", 8)
         self.motor = MotorDriver(max_speed=max_speed)
 
-        rospy.Subsriber("speed_command", Int32, self.callback_speed_command)
+        rospy.Subscriber("speed_command", Int32, self.callback_speed_command)
 
         rospy.Service("stop_motor", Trigger, self.callback_stop)
         
