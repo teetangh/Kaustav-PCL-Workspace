@@ -9,7 +9,7 @@
               "/opt/ros/melodic/**",
               "/usr/include/**"
           ],
-          "name": "ROS_Construct",
+          "name": "ROS_includes",
           "intelliSenseMode": "gcc-x64",
           "compilerPath": "/usr/bin/gcc",
           "cStandard": "gnu11",
