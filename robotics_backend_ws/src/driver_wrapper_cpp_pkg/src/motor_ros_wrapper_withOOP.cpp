@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include "../include/motor_driver.hpp"
+#include "../include/my_robot_driver/motor_driver.hpp"
 
 #include <memory>
 #include <map>
@@ -16,6 +16,7 @@ class MotorDriverROSWrapper
 private:
     std::unique_ptr<MotorDriver> motor_;
     ros::Subscriber speed_command_subscriber_;
+    ros::ServiceServer stop_motor_server_;
 
     ros::Publisher current_speed_publisher_;
     ros::Publisher motor_status_publisher_;
@@ -33,20 +34,20 @@ public:
         if (!ros::param::get("~max_speed", max_speed))
             max_speed = 8;
 
-        if (!ros::param::get("~publish_current_speed_frequency", publish_current_speed frequency_))
+        if (!ros::param::get("~publish_current_speed_frequency", publish_current_speed_frequency_))
             publish_current_speed_frequency_ = 5.0;
 
-        if (!ros::param::get("~publish_motor_status_frequency", publish_motor_status frequency_))
+        if (!ros::param::get("~publish_motor_status_frequency", publish_motor_status_frequency_))
             publish_motor_status_frequency_ = 1.0;
-        
+
         motor_.reset(new MotorDriver(8));
 
-        speed_command_subscriber = nh->subscribe("speed_command", 10, &MotorDriverROSWrapper::callbackSpeedCommand, this);
+        speed_command_subscriber_ = nh->subscribe("speed_command", 10, &MotorDriverROSWrapper::callbackSpeedCommand, this);
 
         stop_motor_server_ = nh->advertiseService("stop_motor", &MotorDriverROSWrapper::callbackStop, this);
 
         current_speed_publisher_ = nh->advertise<std_msgs::Int32>("current_speed", 10);
-        motor_status_publisher_ = nh->advertise<diagnotic_msgs::DiagnosticStatus>("motor_status", 10);
+        motor_status_publisher_ = nh->advertise<diagnostic_msgs::DiagnosticStatus>("motor_status", 10);
 
         current_speed_timer_ = nh->createTimer(ros::Duration(1.0 / publish_current_speed_frequency_), &MotorDriverROSWrapper::publishCurrentSpeed, this);
         motor_status_timer_ = nh->createTimer(ros::Duration(1.0 / publish_motor_status_frequency_), &MotorDriverROSWrapper::publishMotorStatus, this);
@@ -96,9 +97,9 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
+int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "motor_driver");
+    ros::init(argc, argv, "driver_wrapper_cpp_pkg_withOOP");
     ros::NodeHandle nh;
 
     ros::AsyncSpinner spinner(4);

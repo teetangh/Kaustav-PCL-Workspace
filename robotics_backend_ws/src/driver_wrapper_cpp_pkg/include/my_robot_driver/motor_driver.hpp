@@ -4,7 +4,7 @@
 #include <map>
 #include <string>
 
-class motor_driver
+class MotorDriver
 {
 private:
     int max_speed_;
@@ -14,7 +14,7 @@ private:
 
 public:
     // Init communication, set default settinhgs , ...
-    motor_driver(int max_speed = 10)
+    MotorDriver(int max_speed = 10)
     {
         max_speed_ = max_speed;
         current_speed_ = 0;
