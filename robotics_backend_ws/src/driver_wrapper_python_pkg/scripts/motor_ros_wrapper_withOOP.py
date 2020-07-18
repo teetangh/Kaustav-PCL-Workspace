@@ -2,7 +2,7 @@
 
 import rospy
 # from motor_driver import MotorDriver
-from driver_wrapper_python_pkg.src.my_robot_driver.motor_driver import MotorDriver
+from my_robot_driver.motor_driver import MotorDriver
 
 from std_msgs.msg import Int32
 from std_srvs.srv import Trigger
