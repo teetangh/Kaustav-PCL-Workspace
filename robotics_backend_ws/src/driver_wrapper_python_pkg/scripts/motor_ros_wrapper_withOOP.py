@@ -2,7 +2,7 @@
 
 import rospy
 # from motor_driver import MotorDriver
-import robotics_backend_ws.src.driver_wrapper_python_pkg.src.my_robot_driver
+from ..src.my_robot_driver import MotorDriver
 
 from std_msgs import Int32
 from std_srvs import Trigger
@@ -56,9 +56,6 @@ class MotorDriverROSWrapper:
     def callback_stop(self, req):
         self.stop()
         return {"success": True, "message": "Motor has been stopped"}
-
-
-
 
 if __name__ == "__main__":
     rospy.init_node("motor_driver")

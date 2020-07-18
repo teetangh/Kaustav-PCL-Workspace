@@ -1,0 +1,67 @@
+#ifndef MOTOR_DRIVER_HPP
+#define MOTOR_DRIVER_HPP
+
+#include <map>
+#include <string>
+
+class motor_driver
+{
+private:
+    int max_speed_;
+    int current_speed_;
+    int voltage_;
+    int temperature_;
+
+public:
+    // Init communication, set default settinhgs , ...
+    motor_driver(int max_speed = 10)
+    {
+        max_speed_ = max_speed;
+        current_speed_ = 0;
+        voltage_ = 12;
+        temperature_ = 47;
+    }
+
+    // Give a speed that the motor will try to reach
+    void setSpeed(int speed)
+    {
+        if (speed <= max_speed_)
+            current_speed_ = speed;
+        else
+            current_speed_ = max_speed_;
+    }
+
+    // Stop the motor by setting speed to 0
+    void stop()
+    {
+        current_speed_ = 0;
+    }
+
+    // Return the current speed
+    int getSpeed()
+    {
+        return current_speed_;
+    }
+
+    // Return hardware information from the motot
+    std::map<std::string, std::string> getStatus()
+    {
+        std::map<std::string, std::string> status;
+        status["temperature"] = std::to_string(temperature_);
+        status["voltage"] = std::to_string(voltage_);
+
+        return status;
+    }
+
+    // ~motor_driver();
+};
+
+// motor_driver::motor_driver(/* args */)
+// {
+// }
+
+// motor_driver::~motor_driver()
+// {
+// }
+
+#endif
