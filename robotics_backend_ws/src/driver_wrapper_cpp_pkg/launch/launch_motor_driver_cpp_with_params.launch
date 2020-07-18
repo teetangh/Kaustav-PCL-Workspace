@@ -1,0 +1,17 @@
+<launch>
+    <group ns="robot1">
+        <node name="my_motor_driver" pkg="driver_wrapper_cpp_pkg" type="motor_ros_node_withOOP" output="screen">
+            <param name="max_speed" type="int" value="1" />
+            <param name="publish_current_speed_frequency" type="double" value="10.0" />
+            <param name="publish_motor_status_frequency" type="double" value="11.0" />
+        </node>
+    </group>
+
+    <group ns="robot2">
+        <node name="my_motor_driver" pkg="driver_wrapper_cpp_pkg" type="motor_ros_node_withOOP" output="screen">
+            <param name="max_speed" type="int" value="2" />
+            <param name="publish_current_speed_frequency" type="double" value="20.0" />
+            <param name="publish_motor_status_frequency" type="double" value="22.0" />
+        </node>
+    </group>
+</launch>

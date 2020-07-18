@@ -12,8 +12,8 @@ int main(int argc, char **argv)
     MotorDriver motor = MotorDriver(8);
     ROS_INFO("Motor is now started");
 
-    // ros::spin();
-    ros::motor.stop();
+    ros::spin();
+    motor.stop();
 
     return 0;
 }
