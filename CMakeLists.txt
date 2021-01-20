@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-project(pcd_write)
+project(kaustav_pcl_practice)
 
 find_package(PCL 1.2 REQUIRED)
 
