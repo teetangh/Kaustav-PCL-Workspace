@@ -8,6 +8,5 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-add_executable (pcd_write pcd_write.cpp)
+add_executable (pcd_write src/part001_writing_pcd_files/pcd_write.cpp)
 target_link_libraries (pcd_write ${PCL_LIBRARIES})
-

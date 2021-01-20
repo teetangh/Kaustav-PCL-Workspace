@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/pcd_write.dir/pcd_write.cpp.o"
-  "pcd_write"
+  "CMakeFiles/pcd_write.dir/src/part001_writing_pcd_files/pcd_write.cpp.o"
   "pcd_write.pdb"
+  "pcd_write"
 )
 
 # Per-language clean rules from dependency scanning.
