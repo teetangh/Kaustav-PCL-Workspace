@@ -123,6 +123,19 @@ pcd_write/fast:
 	$(MAKE) -f CMakeFiles/pcd_write.dir/build.make CMakeFiles/pcd_write.dir/build
 .PHONY : pcd_write/fast
 
+#=============================================================================
+# Target rules for targets named matrix_transform
+
+# Build rule for target.
+matrix_transform: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 matrix_transform
+.PHONY : matrix_transform
+
+# fast build rule for target.
+matrix_transform/fast:
+	$(MAKE) -f CMakeFiles/matrix_transform.dir/build.make CMakeFiles/matrix_transform.dir/build
+.PHONY : matrix_transform/fast
+
 src/part001_writing_pcd_files/pcd_write.o: src/part001_writing_pcd_files/pcd_write.cpp.o
 
 .PHONY : src/part001_writing_pcd_files/pcd_write.o
@@ -150,6 +163,33 @@ src/part001_writing_pcd_files/pcd_write.cpp.s:
 	$(MAKE) -f CMakeFiles/pcd_write.dir/build.make CMakeFiles/pcd_write.dir/src/part001_writing_pcd_files/pcd_write.cpp.s
 .PHONY : src/part001_writing_pcd_files/pcd_write.cpp.s
 
+src/part002_matrix_transform/matrix_transform.o: src/part002_matrix_transform/matrix_transform.cpp.o
+
+.PHONY : src/part002_matrix_transform/matrix_transform.o
+
+# target to build an object file
+src/part002_matrix_transform/matrix_transform.cpp.o:
+	$(MAKE) -f CMakeFiles/matrix_transform.dir/build.make CMakeFiles/matrix_transform.dir/src/part002_matrix_transform/matrix_transform.cpp.o
+.PHONY : src/part002_matrix_transform/matrix_transform.cpp.o
+
+src/part002_matrix_transform/matrix_transform.i: src/part002_matrix_transform/matrix_transform.cpp.i
+
+.PHONY : src/part002_matrix_transform/matrix_transform.i
+
+# target to preprocess a source file
+src/part002_matrix_transform/matrix_transform.cpp.i:
+	$(MAKE) -f CMakeFiles/matrix_transform.dir/build.make CMakeFiles/matrix_transform.dir/src/part002_matrix_transform/matrix_transform.cpp.i
+.PHONY : src/part002_matrix_transform/matrix_transform.cpp.i
+
+src/part002_matrix_transform/matrix_transform.s: src/part002_matrix_transform/matrix_transform.cpp.s
+
+.PHONY : src/part002_matrix_transform/matrix_transform.s
+
+# target to generate assembly for a file
+src/part002_matrix_transform/matrix_transform.cpp.s:
+	$(MAKE) -f CMakeFiles/matrix_transform.dir/build.make CMakeFiles/matrix_transform.dir/src/part002_matrix_transform/matrix_transform.cpp.s
+.PHONY : src/part002_matrix_transform/matrix_transform.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... pcd_write"
 	@echo "... edit_cache"
+	@echo "... pcd_write"
+	@echo "... matrix_transform"
 	@echo "... src/part001_writing_pcd_files/pcd_write.o"
 	@echo "... src/part001_writing_pcd_files/pcd_write.i"
 	@echo "... src/part001_writing_pcd_files/pcd_write.s"
+	@echo "... src/part002_matrix_transform/matrix_transform.o"
+	@echo "... src/part002_matrix_transform/matrix_transform.i"
+	@echo "... src/part002_matrix_transform/matrix_transform.s"
 .PHONY : help
 
 
