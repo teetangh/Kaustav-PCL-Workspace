@@ -79,6 +79,12 @@ int main(int argc, char **argv)
     | 0 0 1 z |  /
     | 0 0 0 1 |    -> We do not use this line (and it has to stay 0,0,0,1)
 
+    //     |  cos(θ) -sin(θ)  0.0 |
+    // R = |  sin(θ)  cos(θ)  0.0 |
+    //     |  0.0     0.0     1.0 |
+
+    // t = < 2.5, 0.0, 0.0 >
+
     METHOD #1: Using a Matrix4f
     This is the "manual" method, perfect to understand but error prone !
   */
