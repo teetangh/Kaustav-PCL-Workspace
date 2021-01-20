@@ -1,4 +1,0 @@
-/home/kaustav/Desktop/Kaustav-PCL-Workspace/build/CMakeFiles/rebuild_cache.dir
-/home/kaustav/Desktop/Kaustav-PCL-Workspace/build/CMakeFiles/edit_cache.dir
-/home/kaustav/Desktop/Kaustav-PCL-Workspace/build/CMakeFiles/pcd_write.dir
-/home/kaustav/Desktop/Kaustav-PCL-Workspace/build/CMakeFiles/matrix_transform.dir
