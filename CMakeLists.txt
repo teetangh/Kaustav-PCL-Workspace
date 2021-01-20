@@ -13,3 +13,9 @@ target_link_libraries (pcd_write ${PCL_LIBRARIES})
 
 add_executable (matrix_transform src/part002_matrix_transform/matrix_transform.cpp)
 target_link_libraries (matrix_transform ${PCL_LIBRARIES})
+
+# add_executable (custom_point src/part003_custom_point_data_types/custom_point.cpp)
+# target_link_libraries (custom_point ${PCL_LIBRARIES})
+
+add_executable (surface_normal_estimation_all_points src/part004_feature_estimation/surface_normal_estimation_all_points.cpp)
+target_link_libraries (surface_normal_estimation_all_points ${PCL_LIBRARIES})
