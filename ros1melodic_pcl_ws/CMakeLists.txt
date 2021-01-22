@@ -17,11 +17,14 @@ target_link_libraries (matrix_transform ${PCL_LIBRARIES})
 # add_executable (custom_point src/part003_custom_point_data_types/custom_point.cpp)
 # target_link_libraries (custom_point ${PCL_LIBRARIES})
 
-add_executable (normal_estimation_all_points src/part004_feature_estimation/normal_estimation_all_points.cpp)
+add_executable (normal_estimation_all_points src/part004a_feature_estimation/normal_estimation_all_points.cpp)
 target_link_libraries (normal_estimation_all_points ${PCL_LIBRARIES})
 
-# add_executable (normal_estimation_subset_points src/part004_feature_estimation/normal_estimation_subset_points.cpp)
+# add_executable (normal_estimation_subset_points src/part004a_feature_estimation/normal_estimation_subset_points.cpp)
 # target_link_libraries (normal_estimation_subset_points ${PCL_LIBRARIES})
 
-add_executable (normal_estimation_using_integral_image src/part004_feature_estimation/normal_estimation_using_integral_image.cpp)
+add_executable (normal_estimation_using_integral_image src/part004a_feature_estimation/normal_estimation_using_integral_image.cpp)
 target_link_libraries (normal_estimation_using_integral_image ${PCL_LIBRARIES})
+
+add_executable (basic_point_feature_histogram src/part004b_feature_histogram/basic_point_feature_histogram.cpp)
+target_link_libraries (basic_point_feature_histogram ${PCL_LIBRARIES})
