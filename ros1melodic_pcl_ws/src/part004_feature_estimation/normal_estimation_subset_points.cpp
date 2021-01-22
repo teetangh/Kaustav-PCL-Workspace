@@ -1,3 +1,4 @@
+#include <pcl/visualization/cloud_viewer.h>
 #include <iostream>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
@@ -26,9 +27,18 @@ int main(int argc, char const *argv[])
                   << " " << point.z << std::endl;
     }
 
+    // Create a set of indices to be used. For simplicity, we're going to be using the first 10% of the points in cloud
+    std::vector<int> indices(std::floor(cloud->size() / 10));
+    for (std::size_t i = 0; i < indices.size(); ++i)
+        indices[i] = i;
+
     // Create the normal estimation class, and pass the input dataset to it
     pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
     ne.setInputCloud(cloud);
+
+    // Pass the indices
+    boost::shared_ptr<std::vector<int>> indicesptr(new std::vector<int>(indices));
+    ne.setIndices(indicesptr);
 
     // Create an empty kdtree representation, and pass it to the normal estimation object.
     // Its content will be filled inside the object, based on the given input dataset (as no other search surface is given).
@@ -44,6 +54,14 @@ int main(int argc, char const *argv[])
     // Compute the features
     // cloud_normals->size () should have the same size as the input cloud->size ()
     ne.compute(*cloud_normals);
+
+    // Visualize the normals
+    pcl::visualization::PCLVisualizer viewer("PCL Viewer");
+    viewer.setBackgroundColor(0.0, 0.0, 0.5);
+    viewer.addPointCloudNormals<pcl::PointXYZ, pcl::Normal>(cloud, cloud_normals);
+
+    while (!viewer.wasStopped())
+        viewer.spinOnce();
 
     return 0;
 }

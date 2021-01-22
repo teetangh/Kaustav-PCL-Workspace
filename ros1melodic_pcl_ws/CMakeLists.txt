@@ -17,5 +17,11 @@ target_link_libraries (matrix_transform ${PCL_LIBRARIES})
 # add_executable (custom_point src/part003_custom_point_data_types/custom_point.cpp)
 # target_link_libraries (custom_point ${PCL_LIBRARIES})
 
-add_executable (surface_normal_estimation_all_points src/part004_feature_estimation/surface_normal_estimation_all_points.cpp)
-target_link_libraries (surface_normal_estimation_all_points ${PCL_LIBRARIES})
+add_executable (normal_estimation_all_points src/part004_feature_estimation/normal_estimation_all_points.cpp)
+target_link_libraries (normal_estimation_all_points ${PCL_LIBRARIES})
+
+# add_executable (normal_estimation_subset_points src/part004_feature_estimation/normal_estimation_subset_points.cpp)
+# target_link_libraries (normal_estimation_subset_points ${PCL_LIBRARIES})
+
+add_executable (normal_estimation_using_integral_image src/part004_feature_estimation/normal_estimation_using_integral_image.cpp)
+target_link_libraries (normal_estimation_using_integral_image ${PCL_LIBRARIES})
