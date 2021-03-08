@@ -1,1 +1,0 @@
-# Kaustav-ROS-practice
