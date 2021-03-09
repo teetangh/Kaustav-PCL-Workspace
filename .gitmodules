@@ -10,3 +10,6 @@
 	path = ros1melodic_moveit_ws/src/universal_robot
 	url = https://github.com/ros-industrial/universal_robot.git
 	branch = melodic-devel
+[submodule "ros_with_virtual_environment_example"]
+	path = ros_with_virtual_environment_example
+	url = https://github.com/kandithws/ros_with_virtual_environment_example
